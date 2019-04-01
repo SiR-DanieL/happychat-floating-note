@@ -12,9 +12,7 @@ A userscript for [Happychat](https://github.com/Automattic/happychat) HUD that c
 1. Add `happychat-floating-note.js` contents to a userscript manager such as [Tampermonkey](https://tampermonkey.net/). The CSS styles are embedded within the script itself.
 2. There are some easily customizable `options` in the script such as the floating note background color and a note template string.
 
-```
-Note: Take care to backup your custom options & other changes anytime you are updating to a newer script version.
-```
+<small>⚠️ Note: Take care to backup your custom options & other changes anytime you are updating to a newer script version.</small>
 
 ## More Information
 
