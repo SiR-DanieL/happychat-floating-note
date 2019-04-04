@@ -4,7 +4,7 @@ A userscript for [Happychat](https://github.com/Automattic/happychat) HUD that c
 
 - Helps avoid sending private notes to a user.
 - Can still use `/note` normally as you please.
-- Manage long running notes without the need for a separate text app window.
+- Manage long-running notes without the need for a separate text app window.
 - Note data is automatically saved as you switch between chats.
 
 ## Installation
@@ -16,7 +16,7 @@ A userscript for [Happychat](https://github.com/Automattic/happychat) HUD that c
 
 ## More Information
 
-Please see this [Todo: private post](https://wordpress.com) for further information. Feel free to drop a comment on that post or open an issue here with any feedback or questions.
+Please see this [private post](https://wehavetheanswers.wordpress.com/2019/04/04/happychat-floating-note/) for further information. Feel free to drop a comment on that post or open an issue here with any feedback or questions.
 
 ## Changelog
 
