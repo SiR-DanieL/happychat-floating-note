@@ -20,6 +20,10 @@ Please see this [private post](https://wehavetheanswers.wordpress.com/2019/04/04
 
 ## Changelog
 
+### Version 1.1.1
+
+* Added `USE_GRAMMARLY` option which is false by default. Ran into multiple issues with Grammarly, so enable Grammarly at your own risk for now.
+
 ### Version 1.0.1
 
 * Fixed `Send` note button sending contents more than once.

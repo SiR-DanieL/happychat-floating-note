@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Happychat Floating Note
 // @namespace    https://github.com/samiff/happychat-floating-note
-// @version      1.0.1
+// @version      1.1.1
 // @description  Creates a floating note entry for each Happychat.
 // @author       samifett
 // @downloadURL  none
@@ -19,6 +19,7 @@ const options = {
         NOTE_WIDTH: '340px',
         NOTE_FONT_SIZE: '16px'
     },
+    USE_GRAMMARLY: false, // Changing this to true wiil enable Grammarly for note input, but there bugs with that.
     LOCAL_STORAGE_KEY: 'hcfn_', // Locale storage key prefix
     NS: 'hcfn-', // CSS namespace prefix
     STORAGE_FLUSH_INTERVAL_MS: 86400000 // 24 hours
@@ -43,7 +44,7 @@ history.pushState = function () {
 const floatingNoteHtml = `
 <div class="${options.NS}note">
     <div class="${options.NS}note__container-inner">
-        <textarea class="${options.NS}note__input"></textarea>
+        <textarea class="${options.NS}note__input" data-enable-grammarly="${options.USE_GRAMMARLY}"></textarea>
         <div class="${options.NS}note__controls">
             <div class="${options.NS}note__controls__control-container">
                 <button class="${options.NS}note__controls__control ${options.NS}note__controls__close">Close</button>
