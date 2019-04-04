@@ -230,6 +230,7 @@ const styles = `
     padding: 12px;
     resize: none;
     border: none;
+    outline: none;
 }
 
 .${options.NS}note__controls {
