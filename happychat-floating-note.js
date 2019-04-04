@@ -59,7 +59,7 @@ document.body.insertAdjacentHTML('beforeend', floatingNoteHtml);
 document.getElementsByClassName(`${options.NS}note__controls__close`)[0]
     .onclick = handleNoteClose;
 document.getElementsByClassName(`${options.NS}note__controls__send`)[0]
-    .onclick = handleNoteSend;
+    .onclick = window._.throttle(handleNoteSend, 500, { 'trailing': false });
 state.noteRef = document.getElementsByClassName(`${options.NS}note`)[0];
 state.noteInputRef = document.getElementsByClassName(`${options.NS}note__input`)[0];
 
@@ -91,7 +91,6 @@ function initializeLocalStorage() {
     }
 }
 initializeLocalStorage();
-
 
 // Opens and closes note for an active chat
 function handleNoteToggleBtnClicked() {
