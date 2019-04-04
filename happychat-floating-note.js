@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Happychat Floating Note
 // @namespace    https://github.com/samiff/happychat-floating-note
-// @version      1.0.0
+// @version      1.0.1
 // @description  Creates a floating note entry for each Happychat.
 // @author       samifett
 // @downloadURL  none

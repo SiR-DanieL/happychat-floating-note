@@ -17,3 +17,10 @@ A userscript for [Happychat](https://github.com/Automattic/happychat) HUD that c
 ## More Information
 
 Please see this [Todo: private post](https://wordpress.com) for further information. Feel free to drop a comment on that post or open an issue here with any feedback or questions.
+
+## Changelog
+
+### Version 1.0.1
+
+* Fixed `Send` note button sending contents more than once.
+* Removed note input `<textarea>` outline.
