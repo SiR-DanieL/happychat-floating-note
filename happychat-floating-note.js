@@ -11,7 +11,7 @@
 
 // Script Options - Customize Me!
 const options = {
-    NOTE_TOGGLE_BTN_TXT: '👻 Floating Note',
+    NOTE_TOGGLE_BTN_TXT: '👻',
     NOTE_TEMPLATE: '', // Customize a new note's starting text, or leave blank. Use "\n" for line breaks.
     STYLE: {
         NOTE_BACKGROUND_COLOR: '#fff59d',
@@ -82,11 +82,11 @@ if (options.KEYBOARD_SHORTCUTS.USE_SHORTCUTS) {
 
 // Attach the note toggle button near the "+1" button
 const attachNoteToggleBtnIntervalId = window.setInterval(() => {
-    if (document.getElementsByClassName('chat-list__title-bar')[0]) {
+    if (document.getElementsByClassName('chat-list__title-bar-buttons')[0]) {
         const noteToggleBtnHtml = `<button class="${options.NS}note-toggle-btn"`
             + `title="Click to toggle floating note for active chat">${options.NOTE_TOGGLE_BTN_TXT}</button>`;
-        document.getElementsByClassName('chat-list__title-bar')[0]
-            .insertAdjacentHTML('afterend', noteToggleBtnHtml);
+        document.getElementsByClassName('chat-list__title-bar-buttons')[0]
+            .insertAdjacentHTML('afterbegin', noteToggleBtnHtml);
         document.getElementsByClassName(`${options.NS}note-toggle-btn`)[0]
             .onclick = handleNoteToggleBtnClicked;
         window.clearInterval(attachNoteToggleBtnIntervalId);
@@ -217,8 +217,7 @@ const styles = `
 <style type="text/css">
 .${options.NS}note-toggle-btn {
     margin: 0;
-    margin-bottom: 14px;
-    width: 100%;
+    margin-right: 5px;
 }
 
 .${options.NS}note {
