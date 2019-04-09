@@ -24,9 +24,11 @@ const options = {
     NS: 'hcfn-', // CSS namespace prefix
     STORAGE_FLUSH_INTERVAL_MS: 86400000, // 24 hours
     KEYBOARD_SHORTCUTS: {
+        // More info on shortcuts: https://github.com/samiff/happychat-floating-note/issues/1#issuecomment-481107336
         USE_SHORTCUTS: false,
-        OPEN_CLOSE_NOTE_KEY: 70 // "F" key by default. More info: TODO: link to GH issue.
-    }
+        OPEN_CLOSE_NOTE_KEY: 70 // "F" key by default.
+    },
+    MANAGE_FOCUS: true, // When opening a note, obtain focus. When closing a note, returns focus to chat input.
 };
 
 // Script state
@@ -117,6 +119,7 @@ function handleNoteToggleBtnClicked() {
             state.noteRef.classList.toggle(`${options.NS}note--is-visible`);
             state.noteIsOpen = !state.noteIsOpen;
             state.activeChatId = chatId;
+            options.MANAGE_FOCUS && state.noteInputRef.focus();
         }
     } else {
         handleNoteClose();
@@ -178,6 +181,11 @@ function handleNoteClose() {
         state.noteRef.classList.remove(`${options.NS}note--is-visible`);
         state.noteIsOpen = false;
         state.activeChatId = null;
+
+        if (options.MANAGE_FOCUS) {
+            const happychatCompose = document.querySelector('.chat-actions__current-chat-action-compose textarea');
+            happychatCompose && happychatCompose.focus();
+        }
     }
 }
 
