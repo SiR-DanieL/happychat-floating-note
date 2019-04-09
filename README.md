@@ -20,6 +20,11 @@ Please see this [private post](https://wehavetheanswers.wordpress.com/2019/04/04
 
 ## Changelog
 
+### Version 1.2.1
+
+* Added `KEYBOARD_SHORTCUTS` option which is false by default. See [this issue](https://github.com/samiff/happychat-floating-note/issues/1#issuecomment-481107336) for more info on using this option.
+* Added `MANAGE_FOCUS` option which is true by default. When opening a note, it is given focus. And when closing a note, focus is set to the chat input area.
+
 ### Version 1.1.1
 
 * Added `USE_GRAMMARLY` option which is false by default. Ran into multiple issues with Grammarly, so enable Grammarly at your own risk for now.
