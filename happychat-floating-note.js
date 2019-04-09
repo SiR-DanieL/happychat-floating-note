@@ -22,7 +22,11 @@ const options = {
     USE_GRAMMARLY: false, // Changing this to true wiil enable Grammarly for note input, but there bugs with that.
     LOCAL_STORAGE_KEY: 'hcfn_', // Locale storage key prefix
     NS: 'hcfn-', // CSS namespace prefix
-    STORAGE_FLUSH_INTERVAL_MS: 86400000 // 24 hours
+    STORAGE_FLUSH_INTERVAL_MS: 86400000, // 24 hours
+    KEYBOARD_SHORTCUTS: {
+        USE_SHORTCUTS: false,
+        OPEN_CLOSE_NOTE_KEY: 70 // "F" key by default. More info: TODO: link to GH issue.
+    }
 };
 
 // Script state
@@ -63,6 +67,16 @@ document.getElementsByClassName(`${options.NS}note__controls__send`)[0]
     .onclick = window._.throttle(handleNoteSend, 500, { 'trailing': false });
 state.noteRef = document.getElementsByClassName(`${options.NS}note`)[0];
 state.noteInputRef = document.getElementsByClassName(`${options.NS}note__input`)[0];
+
+// Attach keyboard shortcut listener
+if (options.KEYBOARD_SHORTCUTS.USE_SHORTCUTS) {
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.shiftKey && e.keyCode === options.KEYBOARD_SHORTCUTS.OPEN_CLOSE_NOTE_KEY) {
+            e.preventDefault();
+            handleNoteToggleBtnClicked();
+        }
+    });
+}
 
 // Attach the note toggle button near the "+1" button
 const attachNoteToggleBtnIntervalId = window.setInterval(() => {
